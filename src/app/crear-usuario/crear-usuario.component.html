@@ -1,0 +1,34 @@
+<form [formGroup]="usuarioForm" (ngSubmit)="onSubmit()">
+    <label for="nombres">Nombres:</label>
+    <input id="nombres" formControlName="nombres" type="text">
+    
+    <label for="apellidos">Apellidos:</label>
+    <input id="apellidos" formControlName="apellidos" type="text">
+    
+    <label for="identificacion">Identificación:</label>
+    <input id="identificacion" formControlName="identificacion" type="text" maxlength="10">
+    
+    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+    <input id="fechaNacimiento" formControlName="fechaNacimiento" type="date">
+    
+    <label for="genero">Género:</label>
+    <select id="genero" formControlName="genero">
+      <option value="">Seleccione</option>
+      <option value="masculino">Masculino</option>
+      <option value="femenino">Femenino</option>
+      <option value="otro">Otro</option>
+    </select>
+    
+    <label for="pais">País:</label>
+    <select id="pais" formControlName="pais">
+      <option value="">Seleccione</option>
+      <option value="colombia">Colombia</option>
+      <option value="mexico">México</option>
+      <option value="argentina">Argentina</option>
+      <!-- Agrega más países según sea necesario -->
+    </select>
+    
+    <button type="submit" [disabled]="usuarioForm.invalid">Enviar</button>
+  </form>
+  
+  
